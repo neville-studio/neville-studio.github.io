@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/global.css">
+    <title>Neville Studio - 由Neville Studio构建的OpenJDK</title>
+    <link rel="icon" href="/favicon.png">
+</head>
+<body>
+    <h1 class="center">由Neville Studio构建的OpenJDK</h1>
+    <hr />
+    <p><a href="/index.CN.html">主页</a> 
+        | <a href="/openjdk.CN.html">由Neville Studio构建的OpenJDK</a> 
+        | <a href="/sntpminitool.CN.html">网络时间同步工具</a>
+        | <a href="/otp.CN.html">一次性密码查看器</a>
+        | <a href="https://github.com/neville-studio">查看公共代码仓库</a>
+        | <a href="/openjdk.html">Please switch to the English site</a>
+    </p>
+    <hr />
+    
+    <p>
+        本页面展示了由Neville Studio构建的OpenJDK版本。该构建以不更改OpenJDK官方发布的源代码为基本原则，
+        并且使用由OpenJDK推荐的构建要求进行构建。由于没有TCK测试套件，我们仅测试是否可以成功构建。
+    </p>
+    <p>
+        为什么要去构建Open JDK？ 主要是因为我想要一个可以在老旧系统上运行的Open JDK版本，
+        尤其是Windows, 我们将保持Open JDK 文档上要求的构建环境的系统要求进行构建。并且尽量不更新构建环境的系统
+    </p>
+    <p>支持的运行平台:
+        <ul>
+            <li>Windows: Windows XP 或 Windows Server 2003(Open JDK 8, 部分API能够正常工作)</li>
+            <li>Windows: Windows Vista 或 Windows Server 2008(Open JDK 8, 所有API都能正常工作)</li>
+            <li>Windows: >=Windows 7 or Windows Server 2008 R2(>=Open JDK 8, 所有API都能正常工作，确保操作系统已完全更新)</li>
+            <li>Linux: GLIBC >= 2.12(Open JDK 8 或更高，部分功能需要fontConfig和x11等相关包)</li>
+            <li>Linux: 2.9 &lt;= GLIBC &lt; 2.12 (仅支持Open JDK 8，部分功能需要fontConfig和x11等相关包)</li>
+            <li>其他: 不支持</li>
+            <li>系统架构: 对于Open JDK 8: x86_64, x86; 对于>=OpenJDK 11, 仅x86_64</li>
+        </ul>
+    </p>
+
+    <strong>注意：请不要将此OpenJDK构建用于生产环境！你可以访问 
+        <a href="https://adoptium.net/">Eclipse Adoptium的官方网站</a>
+         去获取一个官方的稳定OpenJDK构建</strong>
+    <h3><a href="https://pan.baidu.com/s/1mqXOesZeqYkILnV4VDjehA?pwd=j2v8">下载 Open JDK 26 (OpenJDK 在 2026-03-17 发布)</a></h3>
+    <p>如果需要输入提取码，请输入：j2v8</p>
+    <strong>注意：海外用户建议使用VPN访问链接</strong>
+    <p>构建环境</p>
+    <table>
+        <tr>
+            <td>组件</td>
+            <td>Windows说明</td>
+            <td>Linux说明</td>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>Windows Server 2016 (内核版本 10.0.14393.447)</td>
+            <td>Oracle Linux 8.10 (同时将Oracle Linux 6.4作为sysroot, 内核版本: 5.15.0)</td>
+        </tr>
+        <tr>
+            <td>编译器</td>
+            <td>Microsoft Visual Studio 2022 Build Tools, 版本 17.13.2(只选择了 C++ 开发部分)</td>
+            <td>GCC 14.2.0</td>
+        </tr>
+        <tr>
+            <td>附加组件</td>
+            <td>Cygwin(cygwin中同时安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器系统要求)</td>
+            <td>Oracle Linux 6.4(系统根目录，同时使用yum安装了<code>core</code>, <code>development tools</code>包组, 同时通过yum安装了<code>x11</code>, <code>alsa</code>, <code>fontconfig</code>, <code>freetype</code> 这些组件)</td>
+        </tr>
+        <tr>
+            <td>Boot JDK</td>
+            <td>OpenJDK 25+36, 由OpenJDK开发, 见<a href="https://jdk.java.net/java-se-ri/25">jdk.java.net</a></td>
+            <td>OpenJDK 25+36, 由OpenJDK开发, 见<a href="https://jdk.java.net/java-se-ri/25">jdk.java.net</a></td>
+        </tr>
+        <tr>
+            <td>硬盘</td>
+            <td>80GiB</td>
+            <td>80GiB</td>
+        </tr>
+        <tr>
+            <td>架构</td>
+            <td>x86_64</td>
+            <td>x86_64</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>8GiB</td>
+            <td>8GiB</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>Intel Core i5-12500H</td>
+            <td>Intel Core i5-12500H</td>
+        </tr>
+        <tr>
+            <td>虚拟化平台</td>
+            <td>Hyper-V</td>
+            <td>Hyper-V</td>
+        </tr>
+    </table>
+
+    <h3><a href="https://pan.baidu.com/s/18gYnplDgbyjTknSbr5AozA?pwd=6zw8">下载 Open JDK 25.0.2 LTS (OpenJDK 在 2026-01-20 发布)</a></h3>
+    <p>如果需要输入提取码，请输入：6zw8</p>
+    <strong>注意：海外用户建议使用VPN访问链接</strong>
+    <p>构建环境：</p>
+    <table>
+        <tr>
+            <td>组件</td>
+            <td>Windows说明</td>
+            <td>Linux说明</td>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>Windows Server 2016 (内核版本 10.0.14393.447)</td>
+            <td>Oracle Linux 6.4(Linux内核版本 2.6.39 UEK)</td>
+        </tr>
+        <tr>
+            <td>编译器</td>
+            <td>Microsoft Visual Studio 2022 Build Tools, 版本17.13.2(仅选择了C++构建部分)</td>
+            <td>GCC 14.2.0</td>
+        </tr>
+        <tr>
+            <td>附加组件</td>
+            <td>Cygwin(同时安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器系统要求)</td>
+            <td>仅freetype</td>
+        </tr>
+        <tr>
+            <td>Boot JDK</td>
+            <td>OpenJDK 24+36, 由OpenJDK开发, 见<a href="https://jdk.java.net/java-se-ri/24">jdk.java.net</a></td>
+            <td>OpenJDK 24+36, 由OpenJDK开发, 见<a href="https://jdk.java.net/java-se-ri/24">jdk.java.net</a></td>
+        </tr>
+        <tr>
+            <td>硬盘</td>
+            <td>64GiB</td>
+            <td>32GiB</td>
+        </tr>
+        <tr>
+            <td>架构</td>
+            <td>x86_64</td>
+            <td>x86_64</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>8GiB</td>
+            <td>8GiB</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>Intel Core i5-12500H</td>
+            <td>Intel Core i5-12500H</td>
+        </tr>
+        <tr>
+            <td>虚拟化平台</td>
+            <td>Hyper-V</td>
+            <td>VMWare</td>
+        </tr>
+    </table>
+
+    <h3><a href="https://pan.baidu.com/s/13SEb9T8TNmAfwXwkt4rEAQ?pwd=9z17">下载 Open JDK 21.0.10 LTS (OpenJDK 在 2026-01-20 发布)</a></h3>
+    <p>如果需要输入提取码，请输入：9z17</p>
+    <strong>注意：海外用户建议使用VPN访问链接</strong>
+    <p>构建环境</p>
+    <table>
+        <tr>
+            <td>组件</td>
+            <td>Windows要求</td>
+            <td>Linux要求</td>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>Windows Server 2012 R2 (内核版本 6.3.9600)</td>
+            <td>Oracle Linux 6.4(Linux内核版本: 2.6.39 UEK)</td>
+        </tr>
+        <tr>
+            <td>编译器</td>
+            <td>Microsoft Visual Studio 2022 Build Tools, 版本 17.1.0 (仅选择 C++ 开发部分)</td>
+            <td>GCC 13.2.0</td>
+        </tr>
+        <tr>
+            <td>Additional Component</td>
+            <td>Cygwin(同时安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (系统要求), KB2919355 (系统要求)</td>
+            <td>freetype</td>
+        </tr>
+        <tr>
+            <td>Boot JDK</td>
+            <td>OpenJDK 20+36, 由OpenJDK开发, 见<a href="https://jdk.java.net/java-se-ri/20">jdk.java.net</a></td>
+            <td>OpenJDK 20+36, 由OpenJDK开发, 见<a href="https://jdk.java.net/java-se-ri/20">jdk.java.net</a></td>
+        </tr>
+        <tr>
+            <td>硬盘</td>
+            <td>64GiB</td>
+            <td>35GiB</td>
+        </tr>
+        <tr>
+            <td>架构</td>
+            <td>x86_64</td>
+            <td>x86_64</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>8GiB</td>
+            <td>8GiB</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>Intel Core i5-12500H</td>
+            <td>Intel Core i5-12500H</td>
+        </tr>
+        <tr>
+            <td>虚拟化平台</td>
+            <td>Hyper-V</td>
+            <td>VMWare</td>
+        </tr>
+    </table>
+
+    <h3><a href="https://pan.baidu.com/s/1AU-UkVYV233-xZt5QynX9Q?pwd=h3b4">下载Open JDK 17.0.18 LTS (OpenJDK于 2026-01-20发布)</a></h3>
+    <p>如果需要提取码，请输入：h3b4</p>
+    <strong>注意：海外用户建议使用VPN访问链接</strong>
+    <p>构建环境</p>
+    <table>
+        <tr>
+            <td>组件</td>
+            <td>Windows说明</td>
+            <td>Linux说明</td>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>Windows Server 2012 R2 (内核版本 6.3.9600)</td>
+            <td>Oracle Linux 6.4(Linux内核版本: 2.6.39 UEK)</td>
+        </tr>
+        <tr>
+            <td>编译器</td>
+            <td>Microsoft Visual Studio 2022 Build Tools, 版本 17.1.0 (仅选择 C++ 开发部分)</td>
+            <td>GCC 11.2.0</td>
+        </tr>
+        <tr>
+            <td>附加组件</td>
+            <td>Cygwin (同时安装了 <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器要求), KB2919355 (编译器要求)</td>
+            <td>freetype</td>
+        </tr>
+        <tr>
+            <td>Boot JDK</td>
+            <td>OpenJDK 16+36, 由 OpenJDK 开发, 见 <a href="https://jdk.java.net/java-se-ri/16">jdk.java.net</a></td>
+            <td>OpenJDK 16+36, 由 OpenJDK 开发, 见 <a href="https://jdk.java.net/java-se-ri/16">jdk.java.net</a></td>
+        </tr>
+        <tr>
+            <td>硬盘</td>
+            <td>64GiB</td>
+            <td>30GiB</td>
+        </tr>
+        <tr>
+            <td>架构</td>
+            <td>x86_64</td>
+            <td>x86_64</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>8GiB</td>
+            <td>8GiB</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>Intel Core i5-12500H</td>
+            <td>Intel Core i5-12500H</td>
+        </tr>
+        <tr>
+            <td>虚拟化平台</td>
+            <td>Hyper-V</td>
+            <td>VMWare</td>
+        </tr>
+    </table>
+
+    <h3><a href="https://pan.baidu.com/s/1gdgQ7_en_lDOn5UZGBmHhw?pwd=h4a6">下载 Open JDK 11.0.30 LTS (OpenJDK 于 2026-01-20 发布)</a></h3>
+    <p>如果需要提取码，请输入：h4a6</p>
+    <strong>注意：海外用户建议使用vpn访问链接</strong>
+    <p>构建环境</p>
+    <table>
+        <tr>
+            <td>组件</td>
+            <td>Windows要求</td>
+            <td>Linux要求</td>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>Windows Server 2012 R2 (内核版本 6.3.9600)</td>
+            <td>Oracle Linux 6.4(Linux内核版本 2.6.39 UEK)</td>
+        </tr>
+        <tr>
+            <td>编译器</td>
+            <td>Microsoft Visual Studio 2017 Build Tools, 版本 15.9.78 (仅选择了 C++ 开发部分)</td>
+            <td>GCC 7.3.0</td>
+        </tr>
+        <tr>
+            <td>附加组件</td>
+            <td>Cygwin (安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器要求), KB2919355 (编译器要求)</td>
+            <td>freetype</td>
+        </tr>
+        <tr>
+            <td>Boot JDK</td>
+            <td>OpenJDK 10+44, 由 OpenJDK 开发, 见 <a href="https://jdk.java.net/java-se-ri/10">jdk.java.net</a></td>
+            <td>OpenJDK 10+44, 由 OpenJDK 开发, 见 <a href="https://jdk.java.net/java-se-ri/10">jdk.java.net</a></td>
+        </tr>
+        <tr>
+            <td>硬件</td>
+            <td>64GiB</td>
+            <td>40GiB</td>
+        </tr>
+        <tr>
+            <td>架构</td>
+            <td>x86_64</td>
+            <td>x86_64</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>8GiB</td>
+            <td>8GiB</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>Intel Core i5-12500H</td>
+            <td>Intel Core i5-12500H</td>
+        </tr>
+        <tr>
+            <td>虚拟化平台</td>
+            <td>Hyper-V</td>
+            <td>VMWare</td>
+        </tr>
+    </table>
+
+    <h3><a href="https://pan.baidu.com/s/1OR_8ENCVAyc7_oro8e2GkQ?pwd=qqiy">下载 Open JDK 8u482 LTS (OpenJDK 于 2026-01-20 发布)</a></h3>
+    <p>如果需要提取码，请输入：qqiy</p>
+    <strong>注：海外用户建议使用vpn访问链接</strong>
+    <p>构建环境</p>
+    <table>
+        <tr>
+            <td>组件</td>
+            <td>Windows说明</td>
+            <td>Linux 说明</td>
+        </tr>
+        <tr>
+            <td>操作系统</td>
+            <td>Windows Server 2003 Enterprise x64 Edition, Service Pack 2 (内核版本 5.2.3790)</td>
+            <td>Fedora 9 (Linux内核版本: 2.6.25)</td>
+        </tr>
+        <tr>
+            <td>编译器</td>
+            <td>Microsoft Visual Studio 2010 Professional (仅选择了 C++ 开发部分)</td>
+            <td>GCC 4.3.0</td>
+        </tr>
+        <tr>
+            <td>附加组件</td>
+            <td>Cygwin 2.5.2 (安装了<code>zip</code>, <code>unzip</code>, <code>make</code>, <code>git</code>, <code>binutils</code>, <code>m4</code>, <code>gawk</code>, <code>cpio</code>), Windows Image Component 更新(编译器要求)</td>
+            <td>freetype</td>
+        </tr>
+        <tr>
+            <td>Boot JDK</td>
+            <td>Oracle Java 7 update 80, 由 Oracle 构建</a></td>
+            <td>Oracle Java 7 update 7, 由 Oracle 开发</a></td>
+        </tr>
+        <tr>
+            <td>硬件</td>
+            <td>64GiB</td>
+            <td>40GiB</td>
+        </tr>
+        <tr>
+            <td>架构</td>
+            <td>x86/x86_64</td>
+            <td>x86/x86_64</td>
+        </tr>
+        <tr>
+            <td>内存</td>
+            <td>8GiB</td>
+            <td>8GiB</td>
+        </tr>
+        <tr>
+            <td>CPU</td>
+            <td>Intel Core i5-12500H</td>
+            <td>Intel Core i5-12500H</td>
+        </tr>
+        <tr>
+            <td>虚拟化平台</td>
+            <td>VMWare</td>
+            <td>VMWare</td>
+        </tr>
+    </table>
+</body>
+</html>
