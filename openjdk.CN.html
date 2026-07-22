@@ -28,25 +28,102 @@
         尤其是Windows, 我们将保持Open JDK 文档上要求的构建环境的系统要求进行构建。并且尽量不更新构建环境的系统
     </p>
     <p>支持的运行平台:
-        <ul>
-            <li>Windows: Windows XP 或 Windows Server 2003(Open JDK 8, 部分API能够正常工作)</li>
-            <li>Windows: Windows Vista 或 Windows Server 2008(Open JDK 8, 所有API都能正常工作)</li>
-            <li>Windows: >=Windows 7 or Windows Server 2008 R2(>=Open JDK 8, 所有API都能正常工作，确保操作系统已完全更新)</li>
-            <li>Linux: GLIBC >= 2.12(Open JDK 8 或更高，部分功能需要fontConfig和x11等相关包)</li>
-            <li>Linux: 2.9 &lt;= GLIBC &lt; 2.12 (仅支持Open JDK 8，部分功能需要fontConfig和x11等相关包)</li>
-            <li>其他: 不支持</li>
-            <li>系统架构: 对于Open JDK 8: x86_64, x86; 对于>=OpenJDK 11, 仅x86_64</li>
-        </ul>
-    </p>
+            <table border=1>
+            <tr>
+                <td rowspan="2" width="10%">OpenJDK 版本</td>
+                <td rowspan="2" width="5%">(桌面版, 服务器版)</td>
+                <td colspan="3" width="60%">Windows 版本要求</td>
+                <td colspan="3" width="25%">Linux 操作系统要求</td>
+            </tr>
+            <tr>
+                <td width="22%">最低要求</td>
+                <td width="22%">推荐要求</td>
+                <td width="20%">附加软件包</td>
+                <td width="5%">最低要求</td>
+                <td width="5%">推荐要求</td>
+                <td width="30%">附加软件包</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 8 LTS x86 和 x86_64</td>
+                <td>桌面版</td>
+                <td>Windows XP Service Pack 3</td>
+                <td>Windows Vista Service Pack 2</td>
+                <td rowspan="2">部分 API 需要 推荐要求的操作系统 或更高版本。</td>
+                <td rowspan="2" colspan="2">Linux, GLIBC >= 2.4</td>
+                <td rowspan="12">部分 API 需要 <code>fontconfig</code>、<code>x11</code>、<code>cups</code>、<code>alsa-lib</code> 库</td>
+            </tr>
+            <tr>
+                <td>服务器版</td>
+                <td>Windows Server 2003 Service Pack 2</td>
+                <td>&gt;= Windows Server 2008 Service Pack 2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 11 LTS, x86_64</td>
+                <td>桌面版</td>
+                <td colspan="2">&gt;= Windows 7 Service Pack 1</td>
+                <td rowspan="2">无</td>
+                <td rowspan="10" colspan="2">Linux, GLIBC >= 2.9</td>
+            </tr>
+            <tr>
+                <td>服务器版</td>
+                <td colspan="2">&gt;= Windows Server 2008 R2 Service Pack 1</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 17 LTS, x86_64</td>
+                <td>桌面版</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+                <td rowspan="8">部分 API 需要 推荐要求的操作系统 或更高版本。</td>
+            </tr>
+            <tr>
+                <td>服务器版</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 21 LTS, x86_64</td>
+                <td>桌面版</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+            </tr>
+            <tr>
+                <td>服务器版</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 25 LTS, x86_64</td>
+                <td>桌面版</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+            </tr>
+            <tr>
+                <td>服务器版</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 26, x86_64</td>
+                <td>桌面版</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+            </tr>
+            <tr>
+                <td>服务器版</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+        </table>
+    <p>* 对于每个操作系统，建议升级到最新支持的版本并安装最新的补丁。</p>
 
     <strong>注意：请不要将此OpenJDK构建用于生产环境！你可以访问 
         <a href="https://adoptium.net/">Eclipse Adoptium的官方网站</a>
          去获取一个官方的稳定OpenJDK构建</strong>
-    <h3><a href="https://pan.baidu.com/s/1Z0RtODzlCzIjbv2HsCaCag?pwd=gq5c">下载 Open JDK 26.0.1 (OpenJDK 在 2026-04-21 UTC 发布)</a></h3>
-    <p>如果需要输入提取码，请输入：gq5c</p>
+    <h3><a href="https://pan.baidu.com/s/1IJ10GpBUbCIeLVPclwG5gA?pwd=jmwp">下载 Open JDK 26.0.2 (OpenJDK 在 2026-07-21 UTC 发布)</a></h3>
+    <p>如果需要输入提取码，请输入：jmwp</p>
     <strong>注意：海外用户建议使用VPN访问链接</strong>
     <p>构建环境</p>
-    <table>
+    <table border="1">
         <tr>
             <td>组件</td>
             <td>Windows说明</td>
@@ -54,8 +131,8 @@
         </tr>
         <tr>
             <td>操作系统</td>
-            <td>Windows Server 2016 (内核版本 10.0.14393.447)</td>
-            <td>Oracle Linux 8.10 (同时将Oracle Linux 6.4作为sysroot, 内核版本: 5.15.0)</td>
+            <td>Windows Server 2016 Datacenter (内核版本 10.0.14393.447)</td>
+            <td>Oracle Linux 8.10 (同时将Oracle Linux 6.4作为sysroot, 内核版本: 5.15.0-318.199.3.2.el8uek.x86_64)</td>
         </tr>
         <tr>
             <td>编译器</td>
@@ -64,8 +141,8 @@
         </tr>
         <tr>
             <td>附加组件</td>
-            <td>Cygwin(cygwin中同时安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器系统要求)</td>
-            <td>Oracle Linux 6.4(系统根目录，同时使用yum安装了<code>core</code>, <code>development tools</code>包组, 同时通过yum安装了<code>x11</code>, <code>alsa</code>, <code>fontconfig</code>, <code>freetype</code> 这些组件)</td>
+            <td>Cygwin 3.6.7-1(同时安装了 <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1)， .NET Framework 4.8 (编译器系统要求)</td>
+            <td>Oracle Linux 6.4(sysroot目录，同时使用yum安装了<code>Base</code>, <code>Development Tools</code>包组, 同时通过yum安装了<code>cups-devel</code>, <code>x11</code> 库 (包含 <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> 这些组件)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -99,11 +176,11 @@
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/18ab9adRhKzQx_D11GUdg-A?pwd=2935">下载 Open JDK 25.0.3 LTS (OpenJDK 在 2026-04-21 UTC 发布)</a></h3>
-    <p>如果需要输入提取码，请输入：2935</p>
+    <h3><a href="https://pan.baidu.com/s/12CxJvLnfkdaCcYBHye28Jw?pwd=gi2b">下载 Open JDK 25.0.4 LTS (OpenJDK 在 2026-07-21 UTC 发布)</a></h3>
+    <p>如果需要输入提取码，请输入：gi2b</p>
     <strong>注意：海外用户建议使用VPN访问链接</strong>
     <p>构建环境：</p>
-    <table>
+    <table border=1>
         <tr>
             <td>组件</td>
             <td>Windows说明</td>
@@ -111,18 +188,18 @@
         </tr>
         <tr>
             <td>操作系统</td>
-            <td>Windows Server 2016 (内核版本 10.0.14393.447)</td>
-            <td>Oracle Linux 6.4(Linux内核版本 2.6.39 UEK)</td>
+            <td>Windows Server 2016 Datacenter (内核版本 10.0.14393.447)</td>
+            <td>Oracle Linux 8.10 (同时将Oracle Linux 6.4作为sysroot, 内核版本: 5.15.0-318.199.3.2.el8uek.x86_64)</td>
         </tr>
         <tr>
             <td>编译器</td>
-            <td>Microsoft Visual Studio 2022 Build Tools, 版本17.13.2(仅选择了C++构建部分)</td>
+            <td>Microsoft Visual Studio 2022 Build Tools, 版本 17.13.2(只选择了 C++ 开发部分)</td>
             <td>GCC 14.2.0</td>
         </tr>
         <tr>
             <td>附加组件</td>
-            <td>Cygwin(同时安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器系统要求)</td>
-            <td>仅freetype</td>
+            <td>Cygwin 3.6.5-1(同时安装了 <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1),  .NET Framework 4.8 (编译器系统要求)</td>
+            <td>Oracle Linux 6.4(sysroot目录，同时使用yum安装了<code>Base</code>, <code>Development Tools</code>包组, 同时通过yum安装了<code>cups-devel</code>, <code>x11</code> 库 (包含 <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> 这些组件)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -132,7 +209,7 @@
         <tr>
             <td>硬盘</td>
             <td>64GiB</td>
-            <td>32GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>架构</td>
@@ -156,11 +233,11 @@
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/1VgE92Qhvy8foyuUBlNbm_Q?pwd=hyj7">下载 Open JDK 21.0.11 LTS (OpenJDK 在 2026-04-21 UTC 发布)</a></h3>
-    <p>如果需要输入提取码，请输入：hyj7</p>
+    <h3><a href="https://pan.baidu.com/s/1Ed-K_MAVZcQVvQe2cB7c5g?pwd=cvtg">下载 Open JDK 21.0.12 LTS (OpenJDK 在 2026-07-21 UTC 发布)</a></h3>
+    <p>如果需要输入提取码，请输入：cvtg</p>
     <strong>注意：海外用户建议使用VPN访问链接</strong>
     <p>构建环境</p>
-    <table>
+    <table border=1>
         <tr>
             <td>组件</td>
             <td>Windows要求</td>
@@ -168,8 +245,8 @@
         </tr>
         <tr>
             <td>操作系统</td>
-            <td>Windows Server 2012 R2 (内核版本 6.3.9600)</td>
-            <td>Oracle Linux 6.4(Linux内核版本: 2.6.39 UEK)</td>
+            <td>Windows Server 2012 R2 Datacenter (内核版本 6.3.9600)</td>
+            <td>Oracle Linux 7.6(使用 Oracle Linux 6.4 作为 Sysroot, Linux内核版本: 4.14.35-1818.3.3.el7uek.x86_64)</td>
         </tr>
         <tr>
             <td>编译器</td>
@@ -178,8 +255,8 @@
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin(同时安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (系统要求), KB2919355 (系统要求)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.5-1(同时安装了 <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1), .NET Framework 4.8 (系统要求), KB2919355 (系统要求)</td>
+            <td>Oracle Linux 6.4(sysroot目录，同时使用yum安装了<code>Base</code>, <code>Development Tools</code>包组, 同时通过yum安装了<code>cups-devel</code>, <code>x11</code> 库 (包含 <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> 这些组件)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -189,7 +266,7 @@
         <tr>
             <td>硬盘</td>
             <td>64GiB</td>
-            <td>35GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>架构</td>
@@ -209,15 +286,15 @@
         <tr>
             <td>虚拟化平台</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/1HoMp885H4VDgEn23jpAr5w?pwd=xq81">下载Open JDK 17.0.19 LTS (OpenJDK于 2026-04-21 UTC 发布)</a></h3>
-    <p>如果需要提取码，请输入：xq81</p>
+    <h3><a href="https://pan.baidu.com/s/1PMvngSMe4uGKJOm3KBYBqA?pwd=asfx">下载Open JDK 17.0.20 LTS (OpenJDK于 2026-07-21 UTC 发布)</a></h3>
+    <p>如果需要提取码，请输入：asfx</p>
     <strong>注意：海外用户建议使用VPN访问链接</strong>
     <p>构建环境</p>
-    <table>
+    <table border=1>
         <tr>
             <td>组件</td>
             <td>Windows说明</td>
@@ -225,8 +302,8 @@
         </tr>
         <tr>
             <td>操作系统</td>
-            <td>Windows Server 2012 R2 (内核版本 6.3.9600)</td>
-            <td>Oracle Linux 6.4(Linux内核版本: 2.6.39 UEK)</td>
+            <td>Windows Server 2012 R2 Datacenter (内核版本 6.3.9600)</td>
+            <td>Oracle Linux 7.6(使用 Oracle Linux 6.4 作为 Sysroot, Linux内核版本: 4.14.35-1818.3.3.el7uek.x86_64)</td>
         </tr>
         <tr>
             <td>编译器</td>
@@ -235,8 +312,8 @@
         </tr>
         <tr>
             <td>附加组件</td>
-            <td>Cygwin (同时安装了 <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器要求), KB2919355 (编译器要求)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.5-1(同时安装了 <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1), .NET Framework 4.8 (编译器要求), KB2919355 (编译器要求)</td>
+            <td>Oracle Linux 6.4(sysroot目录，同时使用yum安装了<code>Core</code>, <code>Development Tools</code>包组, 同时通过yum安装了<code>cups-devel</code>, <code>x11</code> 库 (包含 <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> 这些组件)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -246,7 +323,7 @@
         <tr>
             <td>硬盘</td>
             <td>64GiB</td>
-            <td>30GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>架构</td>
@@ -266,15 +343,15 @@
         <tr>
             <td>虚拟化平台</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/10TvH17in5Zv8b2CwpepyGw?pwd=39em">下载 Open JDK 11.0.31 LTS (OpenJDK 于 2026-04-22 UTC 发布)</a></h3>
-    <p>如果需要提取码，请输入：39em</p>
+    <h3><a href="https://pan.baidu.com/s/1IuT-7Tc0FeM4d-G0Hls1ug?pwd=7k4y">下载 Open JDK 11.0.32 LTS (OpenJDK 于 2026-07-21 UTC 发布)</a></h3>
+    <p>如果需要提取码，请输入：7k4y</p>
     <strong>注意：海外用户建议使用vpn访问链接</strong>
     <p>构建环境</p>
-    <table>
+    <table border=1>
         <tr>
             <td>组件</td>
             <td>Windows要求</td>
@@ -282,18 +359,18 @@
         </tr>
         <tr>
             <td>操作系统</td>
-            <td>Windows Server 2012 R2 (内核版本 6.3.9600)</td>
-            <td>Oracle Linux 6.4(Linux内核版本 2.6.39 UEK)</td>
+            <td>Windows Server 2012 R2 Datacenter (内核版本 6.3.9600)</td>
+            <td>Oracle Linux 7.1(使用Oracle Linux 6.4作为Sysroot, 内核版本: 3.8.13-118.55.1.el7uek.x86_64)</td>
         </tr>
         <tr>
             <td>编译器</td>
-            <td>Microsoft Visual Studio 2017 Build Tools, 版本 15.9.78 (仅选择了 C++ 开发部分)</td>
+            <td>Microsoft Visual Studio 2017 Build Tools, 版本 15.9.16 (仅选择了 C++ 开发部分)</td>
             <td>GCC 7.3.0</td>
         </tr>
         <tr>
             <td>附加组件</td>
-            <td>Cygwin (安装了<code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (编译器要求), KB2919355 (编译器要求)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.9-1(同时安装了 <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-3,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1，并降级<code>gawk</code>至5.3.2-1), .NET Framework 4.8 (编译器要求), KB2919355 (编译器要求)</td>
+            <td>更新/安装重要组件（用于在Hyper-V上正常运行）: <code>kernel-uek-3.8.13-118.55.1.el7uek.x86_64</code>, <code>kernel-uek-firmware-3.8.13-118.55.1.el7uek.noarch</code>, <code>kernel-uek-devel-3.8.13-118.55.1.el7uek.x86_64</code>, <code>kernel-uek-devel-3.8.13-118.55.1.el7uek.x86_64</code>, <code>linux-firmware-20180220-62.git6d51311.0.1.el7.noarch</code>, <code>dtrace-modules-3.8.13-118.55.1.el7uek-0.4.5-3.el7.x86_64</code>, <code>binutils-2.27-44.base.0.3.el7.x86_64</code>（用于编译链接）. Oracle Linux 6.4(作为构建的sysroot文件, 并通过yum安装<code>Base</code>, <code>Development Tools</code>包组, 额外安装<code>cups-devel</code>, <code>x11</code>库 (包括 <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code>单个组件)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -323,15 +400,15 @@
         <tr>
             <td>虚拟化平台</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/1966qavq3FAZoPW5z4OsKIg?pwd=gtjs">下载 Open JDK 8u492 LTS (OpenJDK 于 2026-04-22 UTC 发布)</a></h3>
-    <p>如果需要提取码，请输入：gtjs</p>
+    <h3><a href="https://pan.baidu.com/s/11qo2676PZD7vIj9tVg7gGA?pwd=tiyg">下载 Open JDK 8u502 LTS (OpenJDK 于 2026-07-21 UTC 发布)</a></h3>
+    <p>如果需要提取码，请输入：tiyg</p>
     <strong>注：海外用户建议使用vpn访问链接</strong>
     <p>构建环境</p>
-    <table>
+    <table border=1>
         <tr>
             <td>组件</td>
             <td>Windows说明</td>
@@ -340,27 +417,27 @@
         <tr>
             <td>操作系统</td>
             <td>Windows Server 2003 Enterprise x64 Edition, Service Pack 2 (内核版本 5.2.3790)</td>
-            <td>Fedora 9 (Linux内核版本: 2.6.25)</td>
+            <td>CentOS 5.5 x86_64 (Linux内核版本: 2.6.18-194.el5)</td>
         </tr>
         <tr>
             <td>编译器</td>
             <td>Microsoft Visual Studio 2010 Professional (仅选择了 C++ 开发部分)</td>
-            <td>GCC 4.3.0</td>
+            <td>GCC 4.3.1 (源码安装) </td>
         </tr>
         <tr>
             <td>附加组件</td>
-            <td>Cygwin 2.5.2 (安装了<code>zip</code>, <code>unzip</code>, <code>make</code>, <code>git</code>, <code>binutils</code>, <code>m4</code>, <code>gawk</code>, <code>cpio</code>), Windows Image Component 更新(编译器要求)</td>
-            <td>freetype</td>
+            <td>Cygwin 2.5.2 (x86, 安装了<code>zip</code> 3.0-12, <code>unzip</code> 6.0-15, <code>make</code> 4.2.1-1, <code>git</code> 2.8.3-1, <code>binutils</code> 2.25-4, <code>m4</code> 1.4.17-2), Windows Image Component 更新(编译器要求)</td>
+            <td>MPFR Library 2.3.0 (用于安装 GCC，源码安装), <code>gcc</code>2.8.6 (源码安装) <code>alsa-lib-devel</code> 1.0.17-1.el5, <code>cups-devel</code> 1.3.7-18.el5, <code>libXi-devel</code> 1.0.1-4.el5_4, 安装组 <code>Development Libraries</code>, <code>Development Tools</code>,<code>Java Development</code>,<code>X Software Development (含 XFree86-devel)</code></td>
         </tr>
         <tr>
             <td>Boot JDK</td>
-            <td>Oracle Java 7 update 80, 由 Oracle 构建</a></td>
-            <td>Oracle Java 7 update 7, 由 Oracle 开发</a></td>
+            <td>Oracle Java 7 update 80, b15, 由 Oracle 发行，遵守Oracle Binary Code License。见<a href="https://www.oracle.com/java/technologies/javase/javase7-archive-downloads.html">此处</a></td>
+            <td>Java SE 7 update 75 b13, 由 OpenJDK 发行，遵守GNU General Public License version 2协议，见<a href="https://jdk.java.net/java-se-ri/7">此处</a></td>
         </tr>
         <tr>
             <td>硬件</td>
-            <td>64GiB</td>
-            <td>40GiB</td>
+            <td>60GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>架构</td>
@@ -379,11 +456,11 @@
         </tr>
         <tr>
             <td>虚拟化平台</td>
-            <td>VMWare</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
-    <strong>注：由于使用Microsoft Visual Studio 2010 Professional（编译器版本：16.00.30319.01）构建Windows版JDK 8可能会失败，因此，Windows版本已尽量在不影响原始代码运行逻辑情况下做了11行源代码添加修改</strong>
+    <strong>注：由于使用Microsoft Visual Studio 2010 Professional（编译器版本：16.00.30319.01）构建Windows x86_64版JDK 8可能会失败，因此，Windows版本已尽量在不影响原始代码运行逻辑情况下做了11行源代码添加修改</strong>
     
     
     <h3><a href="https://pan.baidu.com/s/1ISwOqc0OWT6BLbp7sX3iWA?pwd=kj81">历史版本下载</a></h3>

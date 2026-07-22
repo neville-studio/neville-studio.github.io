@@ -23,7 +23,7 @@
         This Page shows the Open Java Development Kit for 
         Neville Builds, which are not modified anyway and for provided as is. 
         We do not have TCK to test, we just to see if it can be successfully built
-        and can run some simple Java code.
+        and can run some simple Java code. All the system requirement is built for 
     </p>
     <p>
         Why we build this OpenJDK? Because I want to running the OpenJDK in some Old Operating System.
@@ -31,25 +31,102 @@
         upgrade the any build tools for use.
     </p>
     <p>Supported Platforms:
-        <ul>
-            <li>Windows: Windows XP or Windows Server 2003(Open JDK 8, but only part of the API do work)</li>
-            <li>Windows: Windows Vista or Windows Server 2008(Open JDK 8, all the api work properly.)</li>
-            <li>Windows: >=Windows 7 or Windows Server 2008 R2(>=Open JDK 8, all the api work properly. Be sure that the operating system is fully upgraded)</li>
-            <li>Linux: GLIBC >= 2.12(Open JDK 8 or greater, some features require fontConfig and x11 related packages)</li>
-            <li>Linux: 2.9 &lt;= GLIBC &lt; 2.12 (Open JDK 8 supports, some features require fontConfig and x11 related packages)</li>
-            <li>Other: Do not support</li>
-            <li>Architecture: Open JDK 8: x86_64, x86; >=OpenJDK 11,Only x64</li>
-        </ul>
+        <table border=1>
+            <tr>
+                <td rowspan="2" width="10%">OpenJDK Versions</td>
+                <td rowspan="2" width="5%">(Desktop, Server)</td>
+                <td colspan="3" width="60%">Windows Version Requirement</td>
+                <td colspan="3" width="25%">Linux OS Requirement</td>
+            </tr>
+            <tr>
+                <td width="22%">Minimum</td>
+                <td width="22%">Recommend</td>
+                <td width="20%">Additional Packages</td>
+                <td width="5%">Minimun</td>
+                <td width="5%">Recommend</td>
+                <td width="30%">Additional Packages</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 8 LTS x86 and x86_64</td>
+                <td>Desktop</td>
+                <td>Windows XP Service Pack 3</td>
+                <td>Windows Vista Service Pack 2</td>
+                <td rowspan="2">Some API needs recommended Operating System or better.</td>
+                <td rowspan="2" colspan="2">Linux, GLIBC >= 2.4</td>
+                <td rowspan="12">Some API needs <code>fontconfig</code>, <code>x11</code>, <code>cups</code>, <code>alsa-lib</code> library</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>Windows Server 2003 Service Pack 2</td>
+                <td>&gt;= Windows Server 2008 Service Pack 2</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 11 LTS, x86_64</td>
+                <td>Desktop</td>
+                <td colspan="2">&gt;= Windows 7 Service Pack 1</td>
+                <td rowspan="2">No</td>
+                <td rowspan="10" colspan="2">Linux, GLIBC >= 2.9</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td colspan="2">&gt;= Windows Server 2008 R2 Service Pack 1</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 17 LTS, x86_64</td>
+                <td>Desktop</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+                <td rowspan="8">Some API needs recommended Operating System or better.</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 21 LTS, x86_64</td>
+                <td>Desktop</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 25 LTS, x86_64</td>
+                <td>Desktop</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+            <tr>
+                <td rowspan="2">Open JDK 26, x86_64</td>
+                <td>Desktop</td>
+                <td>Windows 7 Service Pack 1</td>
+                <td>&gt;= Windows 8</td>
+            </tr>
+            <tr>
+                <td>Server</td>
+                <td>Windows Server 2008 R2 Service Pack 1</td>
+                <td>&gt;= Windows Server 2012</td>
+            </tr>
+        </table>
     </p>
-
+    <p>* For each Operating System, It is recommend to upgrade to the latest supported version and patch the latest updates.</p>
     <strong>Warning: do not use this OpenJDK Builds for production! You can go to 
         <a href="https://adoptium.net/">Eclipse Adoptium's website</a>
          to get a official stable release.</strong>
-    <h3><a href="https://pan.baidu.com/s/1Z0RtODzlCzIjbv2HsCaCag?pwd=gq5c">Download Open JDK 26.0.1 (OpenJDK released at 2026-04-21 UTC)</a></h3>
-    <p>If you need to enter a extraction code, please enter: gq5c</p>
+    <h3><a href="https://pan.baidu.com/s/1IJ10GpBUbCIeLVPclwG5gA?pwd=jmwp">Download Open JDK 26.0.2 (OpenJDK released at 2026-07-21 UTC)</a></h3>
+    <p>If you need to enter a extraction code, please enter: jmwp</p>
     <strong>WARN: If you are not in China, you might using VPN to view the previous link.</strong>
     <p>Build Environment</p>
-    <table>
+    <table border=1>
         <tr>
             <td>Component</td>
             <td>Windows Specified</td>
@@ -57,8 +134,8 @@
         </tr>
         <tr>
             <td>Operating System</td>
-            <td>Windows Server 2016 (Build 10.0.14393.447)</td>
-            <td>Oracle Linux 8.10 (using Oracle Linux 6.4 as System root, kernel version: 5.15.0)</td>
+            <td>Windows Server 2016 Datacenter (Build 10.0.14393.447)</td>
+            <td>Oracle Linux 8.10 (using Oracle Linux 6.4 as System root, kernel version: 5.15.0-318.199.3.2.el8uek.x86_64)</td>
         </tr>
         <tr>
             <td>Compiler</td>
@@ -67,8 +144,8 @@
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin(installed with <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (Compiler Prerequirement)</td>
-            <td>Oracle Linux 6.4(System root, and installed <code>core</code>, <code>development tools</code> groups by yum, installed <code>x11</code>, <code>alsa</code>, <code>fontconfig</code>, <code>freetype</code> single component by yum)</td>
+            <td>Cygwin 3.6.7-1(installed with <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1), .NET Framework 4.8 (Compiler Prerequirement)</td>
+            <td>Oracle Linux 6.4(System root, and installed <code>Base</code>, <code>Development Tools</code> groups by yum, installed<code>cups-devel</code>, <code>x11</code> libraries (include <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> single component by yum)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -102,11 +179,11 @@
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/18ab9adRhKzQx_D11GUdg-A?pwd=2935">Download Open JDK 25.0.3 LTS (OpenJDK released at 2026-04-21 UTC)</a></h3>
-    <p>If you need to enter a extraction code, please enter: 2935</p>
+    <h3><a href="https://pan.baidu.com/s/12CxJvLnfkdaCcYBHye28Jw?pwd=gi2b">Download Open JDK 25.0.4 LTS (OpenJDK released at 2026-07-21 UTC)</a></h3>
+    <p>If you need to enter a extraction code, please enter: gi2b</p>
     <strong>WARN: If you are not in China, you might using VPN to view the previous link.</strong>
     <p>Build Environment</p>
-    <table>
+    <table border=1>
         <tr>
             <td>Component</td>
             <td>Windows Specified</td>
@@ -114,8 +191,8 @@
         </tr>
         <tr>
             <td>Operating System</td>
-            <td>Windows Server 2016 (Build 10.0.14393.447)</td>
-            <td>Oracle Linux 6.4(Kernel: 2.6.39 UEK)</td>
+            <td>Windows Server 2016 Datacenter (Build 10.0.14393.447)</td>
+            <td>Oracle Linux 8.10 (using Oracle Linux 6.4 as System root, kernel version: 5.15.0-318.199.3.2.el8uek.x86_64)</td>
         </tr>
         <tr>
             <td>Compiler</td>
@@ -124,8 +201,8 @@
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin(installed with <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (Compiler Prerequirement)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.5-1(installed with <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1), .NET Framework 4.8 (Compiler Prerequirement)</td>
+            <td>Oracle Linux 6.4(System root, and installed <code>Base</code>, <code>Development Tools</code> groups by yum, installed<code>cups-devel</code>, <code>x11</code> libraries (include <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> single component by yum)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -135,7 +212,7 @@
         <tr>
             <td>Hard Disk</td>
             <td>64GiB</td>
-            <td>32GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>Architecture</td>
@@ -155,15 +232,15 @@
         <tr>
             <td>Virtualization Platform</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/1VgE92Qhvy8foyuUBlNbm_Q?pwd=hyj7">Download Open JDK 21.0.11 LTS (OpenJDK released at 2026-04-21 UTC)</a></h3>
-    <p>If you need to enter a extraction code, please enter: hyj7</p>
+    <h3><a href="https://pan.baidu.com/s/1Ed-K_MAVZcQVvQe2cB7c5g?pwd=cvtg">Download Open JDK 21.0.12 LTS (OpenJDK released at 2026-07-21 UTC)</a></h3>
+    <p>If you need to enter a extraction code, please enter: cvtg</p>
     <strong>WARN: If you are not in China, you might using VPN to view the previous link.</strong>
     <p>Build Environment</p>
-    <table>
+    <table border=1>
         <tr>
             <td>Component</td>
             <td>Windows Specified</td>
@@ -171,8 +248,8 @@
         </tr>
         <tr>
             <td>Operating System</td>
-            <td>Windows Server 2012 R2 (Build 6.3.9600)</td>
-            <td>Oracle Linux 6.4(Kernel: 2.6.39 UEK)</td>
+            <td>Windows Server 2012 R2 Datacenter (Build 6.3.9600)</td>
+            <td>Oracle Linux 7.6(Using Oracle Linux 6.4 as Sysroot, Kernel: 4.14.35-1818.3.3.el7uek.x86_64)</td>
         </tr>
         <tr>
             <td>Compiler</td>
@@ -181,8 +258,8 @@
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin(installed with <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (Compiler Prerequirement), KB2919355 (Compiler Prerequirement)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.5-1(installed with <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1), .NET Framework 4.8 (Compiler Prerequirement), KB2919355 (Compiler Prerequirement)</td>
+            <td>Oracle Linux 6.4(System root, and installed <code>Base</code>, <code>Development Tools</code> groups by yum, installed<code>cups-devel</code>, <code>x11</code> libraries (include <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> single component by yum)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -192,7 +269,7 @@
         <tr>
             <td>Hard Disk</td>
             <td>64GiB</td>
-            <td>35GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>Architecture</td>
@@ -212,15 +289,15 @@
         <tr>
             <td>Virtualization Platform</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/1HoMp885H4VDgEn23jpAr5w?pwd=xq81">Download Open JDK 17.0.19 LTS (OpenJDK released at 2026-04-21 UTC)</a></h3>
-    <p>If you need to enter a extraction code, please enter: xq81</p>
+    <h3><a href="https://pan.baidu.com/s/1PMvngSMe4uGKJOm3KBYBqA?pwd=asfx">Download Open JDK 17.0.20 LTS (OpenJDK released at 2026-07-21 UTC)</a></h3>
+    <p>If you need to enter a extraction code, please enter: asfx</p>
     <strong>WARN: If you are not in China, you might using VPN to view the previous link.</strong>
     <p>Build Environment</p>
-    <table>
+    <table border=1>
         <tr>
             <td>Component</td>
             <td>Windows Specified</td>
@@ -228,8 +305,8 @@
         </tr>
         <tr>
             <td>Operating System</td>
-            <td>Windows Server 2012 R2 (Build 6.3.9600)</td>
-            <td>Oracle Linux 6.4(Kernel: 2.6.39 UEK)</td>
+            <td>Windows Server 2012 R2 Datacenter (Build 6.3.9600)</td>
+            <td>Oracle Linux 7.6(Using Oracle Linux 6.4 as Sysroot, Kernel: 4.14.35-1818.3.3.el7uek.x86_64)</td>
         </tr>
         <tr>
             <td>Compiler</td>
@@ -238,8 +315,8 @@
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin(installed with <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (Compiler Prerequirement), KB2919355 (Compiler Prerequirement)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.5-1(installed with <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-2,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1), .NET Framework 4.8 (Compiler Prerequirement), KB2919355 (Compiler Prerequirement)</td>
+            <td>Oracle Linux 6.4(System root, and installed <code>Base</code>, <code>Development Tools</code> groups by yum, installed<code>cups-devel</code>, <code>x11</code> libraries (include <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> single component by yum)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -249,7 +326,7 @@
         <tr>
             <td>Hard Disk</td>
             <td>64GiB</td>
-            <td>30GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>Architecture</td>
@@ -269,15 +346,15 @@
         <tr>
             <td>Virtualization Platform</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/10TvH17in5Zv8b2CwpepyGw?pwd=39em">Download Open JDK 11.0.31 LTS (OpenJDK released at 2026-04-22)</a></h3>
-    <p>If you need to enter a extraction code, please enter: 39em</p>
+    <h3><a href="https://pan.baidu.com/s/1IuT-7Tc0FeM4d-G0Hls1ug?pwd=7k4y">Download Open JDK 11.0.32 LTS (OpenJDK released at 2026-07-21)</a></h3>
+    <p>If you need to enter a extraction code, please enter: 7k4y</p>
     <strong>WARN: If you are not in China, you might using VPN to view the previous link.</strong>
     <p>Build Environment</p>
-    <table>
+    <table border=1>
         <tr>
             <td>Component</td>
             <td>Windows Specified</td>
@@ -285,18 +362,18 @@
         </tr>
         <tr>
             <td>Operating System</td>
-            <td>Windows Server 2012 R2 (Build 6.3.9600)</td>
-            <td>Oracle Linux 6.4(Kernel: 2.6.39 UEK)</td>
+            <td>Windows Server 2012 R2 Datacenter (Build 6.3.9600)</td>
+            <td>Oracle Linux 7.1(Using Oracle Linux 6.4 as Sysroot, Kernel: 3.8.13-118.55.1.el7uek.x86_64)</td>
         </tr>
         <tr>
             <td>Compiler</td>
-            <td>Microsoft Visual Studio 2017 Build Tools, version 15.9.78 (Only Selected C++ Development Part)</td>
+            <td>Microsoft Visual Studio 2017 Build Tools, version 15.9.16 (Only Selected C++ Development Part)</td>
             <td>GCC 7.3.0</td>
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin(installed with <code>zip</code>, <code>unzip</code>, <code>autoconf</code>,<code>make</code>,<code>git</code> ), .NET Framework 4.8 (Compiler Prerequirement), KB2919355 (Compiler Prerequirement)</td>
-            <td>freetype</td>
+            <td>Cygwin 3.6.9-1(installed with <code>zip</code> 6.0-18, <code>unzip</code> 3.0-13, <code>autoconf</code> 15-3,<code>make</code> 4.4.1-2,<code>git</code> 2.51.0-1, Downgraded <code>gawk</code> to 5.3.2-1), .NET Framework 4.8 (Compiler Prerequirement), KB2919355 (Compiler Prerequirement)</td>
+            <td>Updated/Installed important Component (for support on Hyper-V): <code>kernel-uek-3.8.13-118.55.1.el7uek.x86_64</code>, <code>kernel-uek-firmware-3.8.13-118.55.1.el7uek.noarch</code>, <code>kernel-uek-devel-3.8.13-118.55.1.el7uek.x86_64</code>, <code>kernel-uek-devel-3.8.13-118.55.1.el7uek.x86_64</code>, <code>linux-firmware-20180220-62.git6d51311.0.1.el7.noarch</code>, <code>dtrace-modules-3.8.13-118.55.1.el7uek-0.4.5-3.el7.x86_64</code>, <code>binutils-2.27-44.base.0.3.el7.x86_64</code>(Installed for link). Oracle Linux 6.4(System root, and installed <code>Base</code>, <code>Development Tools</code> groups by yum, installed<code>cups-devel</code>, <code>x11</code> libraries (include <code>libXtst-devel</code>, <code>libXt-devel</code> <code>libXrender-devel</code> <code>libXrandr-devel</code> <code>libXi-devel</code>), <code>alsa-lib-devel</code>, <code>fontconfig-devel</code> single component by yum)</td>
         </tr>
         <tr>
             <td>Boot JDK</td>
@@ -306,7 +383,7 @@
         <tr>
             <td>Hard Disk</td>
             <td>64GiB</td>
-            <td>40GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>Architecture</td>
@@ -326,15 +403,15 @@
         <tr>
             <td>Virtualization Platform</td>
             <td>Hyper-V</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
 
-    <h3><a href="https://pan.baidu.com/s/1966qavq3FAZoPW5z4OsKIg?pwd=gtjs">Download Open JDK 8u492 LTS (OpenJDK released at 2026-04-22 UTC)</a></h3>
-    <p>If you need to enter a extraction code, please enter: gtjs</p>
+    <h3><a href="https://pan.baidu.com/s/11qo2676PZD7vIj9tVg7gGA?pwd=tiyg">Download Open JDK 8u502 LTS (OpenJDK released at 2026-07-21 UTC)</a></h3>
+    <p>If you need to enter a extraction code, please enter: tiyg</p>
     <strong>WARN: If you are not in China, you might using VPN to view the previous link.</strong>
     <p>Build Environment</p>
-    <table>
+    <table border=1>
         <tr>
             <td>Component</td>
             <td>Windows Specified</td>
@@ -343,27 +420,27 @@
         <tr>
             <td>Operating System</td>
             <td>Windows Server 2003 Enterprise x64 Edition, Service Pack 2 (Build 5.2.3790)</td>
-            <td>Fedora 9 (Kernel: 2.6.25)</td>
+            <td>CentOS 5.5 x86_64 (Kernel: 2.6.18-194.el5)</td>
         </tr>
         <tr>
             <td>Compiler</td>
             <td>Microsoft Visual Studio 2010 Professional (Only Selected C++ Development Part)</td>
-            <td>GCC 4.3.0</td>
+            <td>GCC 4.3.1 (Source Installed)</td>
         </tr>
         <tr>
             <td>Additional Component</td>
-            <td>Cygwin 2.5.2 (installed with <code>zip</code>, <code>unzip</code>, <code>make</code>, <code>git</code>, <code>binutils</code>, <code>m4</code>, <code>gawk</code>, <code>cpio</code>), Windows Image Component Update(Compiler Prerequirement)</td>
-            <td>freetype</td>
+            <td>Cygwin 2.5.2 (x86, installed with <code>zip</code> 3.0-12, <code>unzip</code> 6.0-15, <code>make</code> 4.2.1-1, <code>git</code> 2.8.3-1, <code>binutils</code> 2.25-4, <code>m4</code> 1.4.17-2), Windows Image Component Update(Compiler Prerequirement)</td>
+            <td>MPFR Library 2.3.0 (Source Installed to compile GCC), <code>gcc</code>2.8.6 (Installed by Source Code) <code>alsa-lib-devel</code> 1.0.17-1.el5, <code>cups-devel</code> 1.3.7-18.el5, <code>libXi-devel</code> 1.0.1-4.el5_4,  Group installed <code>Development Libraries</code>, <code>Development Tools</code>,<code>Java Development</code>,<code>X Software Development (Including XFree86-devel)</code></td>
         </tr>
         <tr>
             <td>Boot JDK</td>
-            <td>Oracle Java 7 update 80, Developed by Oracle</a></td>
-            <td>Oracle Java 7 update 7, Developed by Oracle</a></td>
+            <td>Oracle Java 7 update 80,  b15, Developed by Oracle, under Oracle Binary Code License, See <a href="https://www.oracle.com/java/technologies/javase/javase7-archive-downloads.html">here</a></td>
+            <td>Java SE 7 update 75 b13, Developed by OpenJDK, under the GNU General Public License version 2, see <a href="https://jdk.java.net/java-se-ri/7">here</a></td>
         </tr>
         <tr>
             <td>Hard Disk</td>
-            <td>64GiB</td>
-            <td>40GiB</td>
+            <td>60GiB</td>
+            <td>60GiB</td>
         </tr>
         <tr>
             <td>Architecture</td>
@@ -382,11 +459,11 @@
         </tr>
         <tr>
             <td>Virtualization Platform</td>
-            <td>VMWare</td>
-            <td>VMWare</td>
+            <td>Hyper-V</td>
+            <td>Hyper-V</td>
         </tr>
     </table>
-    <strong>Note: As building the Windows version of the JDK with Microsoft Visual Studio 2010 Professional (Compiler Version: 16.00.30319.01) may fail, the Windows version has been modified with 11 lines of source code added. These changes were made to ensure compatibility without affecting the original code's execution logic.</strong>
+    <strong>Note: As building the Windows version of the JDK with Microsoft Visual Studio 2010 Professional (Compiler Version: 16.00.30319.01) may fail, the Windows version has been modified with 4 lines of source code changed. These changes were made to ensure compatibility without affecting the original code's execution logic.</strong>
 
     <h3><a href="https://pan.baidu.com/s/1ISwOqc0OWT6BLbp7sX3iWA?pwd=kj81">Archive Download</a></h3>
     <p>If you need to enter a extraction code, please enter:  kj81</p>
